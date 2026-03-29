@@ -1,0 +1,32 @@
+<svg width="980" height="640" viewBox="0 0 980 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="980" height="640" rx="32" fill="#11170F"/>
+  <rect x="24" y="24" width="932" height="592" rx="24" fill="url(#panel)" stroke="#2E3A2B"/>
+  <path d="M138 484C210 422 266 360 336 300C386 258 432 241 486 228C547 213 607 220 656 184C706 147 726 106 820 118" stroke="#DFFF4F" stroke-width="14" stroke-linecap="round" stroke-dasharray="1 26"/>
+  <path d="M143 482C217 421 262 352 336 300C397 257 431 247 486 228C557 203 599 214 656 184C714 153 754 117 816 122" stroke="#7CCBFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="142" cy="482" r="18" fill="#DFFF4F"/>
+  <circle cx="142" cy="482" r="34" fill="#DFFF4F" fill-opacity="0.18"/>
+  <circle cx="818" cy="121" r="18" fill="#7CCBFF"/>
+  <circle cx="818" cy="121" r="34" fill="#7CCBFF" fill-opacity="0.18"/>
+  <g opacity="0.6">
+    <path d="M180 122H316" stroke="#2E3A2B" stroke-width="2"/>
+    <path d="M180 162H252" stroke="#2E3A2B" stroke-width="2"/>
+    <path d="M678 522H798" stroke="#2E3A2B" stroke-width="2"/>
+    <path d="M678 562H752" stroke="#2E3A2B" stroke-width="2"/>
+  </g>
+  <g>
+    <rect x="90" y="86" width="256" height="118" rx="24" fill="#171F14" stroke="#2E3A2B"/>
+    <text x="122" y="128" fill="#9CA99A" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">SESSION</text>
+    <text x="122" y="173" fill="#F3F8EE" font-family="Arial, sans-serif" font-size="34" font-weight="700">14.8 km</text>
+  </g>
+  <g>
+    <rect x="640" y="420" width="248" height="122" rx="24" fill="#171F14" stroke="#2E3A2B"/>
+    <text x="672" y="462" fill="#9CA99A" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">TOP SPEED</text>
+    <text x="672" y="507" fill="#F3F8EE" font-family="Arial, sans-serif" font-size="34" font-weight="700">214 km/h</text>
+  </g>
+  <defs>
+    <linearGradient id="panel" x1="128" y1="66" x2="878" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#162015"/>
+      <stop offset="1" stop-color="#0E140D"/>
+    </linearGradient>
+  </defs>
+</svg>

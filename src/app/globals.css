@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f8ef;
+  --surface: #fbfdf8;
+  --surface-soft: #eef4e6;
+  --surface-elevated: #e4edd7;
+  --text-strong: #102111;
+  --text-muted: #56705a;
+  --border-soft: rgba(42, 61, 41, 0.14);
+  --border-strong: #b8c9af;
+  --accent: #b7d934;
+  --accent-strong: #a6d100;
+  --accent-glow: rgba(183, 217, 52, 0.34);
+  --success: #9bca1d;
+  --sky: #71c8ff;
+  --sky-glow: rgba(113, 200, 255, 0.28);
+  --danger: #ff5a63;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c100b;
+    --surface: #121810;
+    --surface-soft: #1a2118;
+    --surface-elevated: #222b1f;
+    --text-strong: #f3f8ee;
+    --text-muted: #9ca99a;
+    --border-soft: rgba(193, 214, 183, 0.12);
+    --border-strong: #303b2d;
+    --accent: #dfff4f;
+    --accent-strong: #c8f451;
+    --accent-glow: rgba(223, 255, 79, 0.25);
+    --success: #c8f451;
+    --sky: #6ec8ff;
+    --sky-glow: rgba(110, 200, 255, 0.18);
+    --danger: #ff5a63;
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, var(--accent-glow), transparent 24%),
+    radial-gradient(circle at 85% 18%, var(--sky-glow), transparent 18%),
+    linear-gradient(180deg, color-mix(in srgb, var(--background) 94%, #000 6%), var(--background));
+  color: var(--text-strong);
+  font-family: var(--font-body), sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 88%);
+  opacity: 0.55;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 65%, transparent);
+  color: var(--background);
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(18px);
+}
+
+.metric-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -55% auto;
+  width: 9rem;
+  height: 9rem;
+  background: radial-gradient(circle, var(--accent-glow), transparent 65%);
+}
+
+.story-grid {
+  background-image:
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px),
+    linear-gradient(var(--border-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+a {
+  text-decoration: none;
+}
