@@ -13,7 +13,7 @@ export default function TermsPage() {
         />
         <div className="mt-8 space-y-6 text-(--text-muted)">
           <p>By using INAZU, you agree to use the app responsibly and respect other users. Do not use the app for illegal activities or unsafe driving/riding.</p>
-          <p>INAZU is not liable for any accidents or misuse. Features and data are provided as-is and may change over time. For questions, contact hello@inazu.app.</p>
+          <p>INAZU is not liable for any accidents or misuse. Features and data are provided as-is and may change over time. For questions, contact support@inazu.app.</p>
         </div>
       </div>
     </main>
