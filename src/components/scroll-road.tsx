@@ -57,7 +57,7 @@ export function ScrollRoad() {
               Open any saved session to review speed, distance, and time in seconds—then keep improving with weekly and monthly trends.
             </p>
           </div>
-          <div className="grid w-full gap-3 lg:w-105 lg:grid-cols-[1fr_1.2fr] lg:items-stretch">
+          <div className="grid w-full gap-3 sm:grid-cols-[1fr_1.2fr] lg:w-105 lg:grid-cols-[1fr_1.2fr] lg:items-stretch">
             <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-(--border-strong) bg-[color-mix(in_srgb,var(--surface)_80%,transparent)] px-4 py-3 text-center">
               <div className="relative h-20 w-20">
                 <svg viewBox="0 0 120 120" className="h-full w-full">
@@ -106,7 +106,7 @@ export function ScrollRoad() {
 
         {/* Bottom row: SVG left (2/3) + info panel right (1/3) */}
         <div className="mt-6 grid gap-4 lg:grid-cols-[2fr_1fr]">
-          <div className="-mx-6 sm:-mx-8 lg:mx-0">
+          <div className="overflow-hidden rounded-2xl">
             <svg
               viewBox="-10 20 910 200"
               className="h-36 w-full"
