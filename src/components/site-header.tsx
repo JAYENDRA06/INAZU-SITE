@@ -37,7 +37,7 @@ export function SiteHeader() {
             INAZU
           </p>
           <p className="text-xs uppercase tracking-[0.25em] text-(--text-muted)">
-            Performance telemetry
+            Your Ride Companion
           </p>
         </div>
       </Link>

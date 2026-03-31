@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "INAZU | Precision performance tracking for bikes and cars",
+  title: "INAZU | Your Ride Companion",
   description:
     "INAZU is a performance-focused ride tracking and analytics platform for car and bike enthusiasts built for precision, competition, and real-world speed intelligence.",
 };
