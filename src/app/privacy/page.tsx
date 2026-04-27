@@ -9,140 +9,144 @@ export default function PrivacyPage() {
         <SectionHeading
           eyebrow="Privacy"
           title="Privacy Policy"
-          description="How INAZU collects, uses, shares, and protects your information."
+          description="How INAZU collects, uses, discloses, and safeguards your information."
         />
-        <div className="mt-3 text-sm text-(--text-muted)">Last updated: April 04, 2026</div>
+        <div className="mt-3 text-sm text-(--text-muted)">Last updated: April 27, 2026</div>
 
         <div className="mt-8 space-y-8 text-(--text-muted)">
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">1. Overview</h2>
             <p>
-              This Privacy Policy explains how INAZU ("we," "us," or "our") may access,
-              collect, store, use, and share your personal information when you use our
-              services, including our mobile application.
-            </p>
-            <p>
-              INAZU is a ride tracking application that can use device location while riding
-              to track route, speed, distance, duration, and related ride metrics. Users may
-              choose whether activities are public or private.
+              Inazu (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the Inazu mobile application (the &quot;App&quot;).
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your
+              information when you use our App. By using Inazu, you agree to the terms of this
+              Privacy Policy.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">2. Information We Collect</h2>
-            <p>Depending on how you use the app, we may collect:</p>
+            <h2 className="text-lg font-semibold text-(--text-main)">1. Information We Collect</h2>
+            <h3 className="text-base font-medium text-(--text-main)">a. Information You Provide</h3>
+            <p>We may collect the following information when you use the App:</p>
             <ul className="list-disc space-y-1 pl-6">
-              <li>Account details such as name, username, email address, and password.</li>
-              <li>Profile and contact details, such as phone number and preferences.</li>
-              <li>Ride and activity data, such as route, speed, time, and distance.</li>
-              <li>Precise geolocation data used to provide ride tracking features.</li>
-              <li>Device and usage data, such as app interaction and technical diagnostics.</li>
+              <li>Email address (for authentication via OTP)</li>
+              <li>Username and password (if you choose this login method)</li>
+              <li>Optional profile details such as: name, vehicle information, profile preferences</li>
             </ul>
-            <p>
-              You are responsible for ensuring any information you provide is accurate and up
-              to date.
-            </p>
+            <p>Providing profile details is optional.</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">3. How We Use Your Information</h2>
-            <p>We process personal information to:</p>
+            <h3 className="text-base font-medium text-(--text-main)">b. Location Data (Mandatory)</h3>
+            <p>
+              Inazu requires access to your device&apos;s location to provide core ride tracking
+              functionality. We collect:
+            </p>
             <ul className="list-disc space-y-1 pl-6">
-              <li>Create and manage your account.</li>
-              <li>Deliver ride tracking, activity history, and statistics features.</li>
-              <li>Provide support, communicate service updates, and respond to requests.</li>
-              <li>Maintain app security, prevent fraud, and troubleshoot issues.</li>
-              <li>Comply with legal obligations.</li>
+              <li>Real-time GPS location during active rides</li>
+              <li>Route and movement data</li>
+              <li>Speed and distance metrics</li>
             </ul>
+            <p>This data is essential for the functioning of the App.</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">4. Legal Bases</h2>
-            <p>
-              Where required by applicable law, we rely on one or more legal bases for
-              processing, including consent, performance of a contract, legal obligations,
-              legitimate interests, and protection of vital interests.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">5. Sharing Of Information</h2>
-            <p>We may share information in limited situations, such as:</p>
+            <h3 className="text-base font-medium text-(--text-main)">c. Automatically Collected Information</h3>
+            <p>We may collect limited technical data such as:</p>
             <ul className="list-disc space-y-1 pl-6">
-              <li>With service providers helping us operate and secure the app.</li>
-              <li>In business transfers such as merger, acquisition, or asset sale.</li>
-              <li>When required by law or to protect rights, safety, and security.</li>
+              <li>Device type and OS version</li>
+              <li>App usage logs (for debugging and performance)</li>
             </ul>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">2. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Provide ride tracking and analytics</li>
+              <li>Authenticate users securely (OTP / password login)</li>
+              <li>Maintain and improve app performance</li>
+              <li>Ensure safety, prevent abuse, and debug issues</li>
+            </ul>
+            <p>We do <strong>not</strong> use your data for advertising or marketing purposes.</p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">3. Data Sharing</h2>
             <p>
-              We do not sell your personal information. We also do not knowingly collect
-              personal information from third parties for this service.
+              We do <strong>not sell, rent, or trade your personal data</strong>. We may share data
+              only:
+            </p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>With infrastructure/service providers (e.g., hosting, email delivery for OTPs)</li>
+              <li>If required by law or legal process</li>
+            </ul>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">4. Data Retention</h2>
+            <p>
+              We retain your data only as long as necessary to: provide services, comply with
+              legal obligations. You may request deletion at any time (see Section 6).
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">6. Data Retention</h2>
+            <h2 className="text-lg font-semibold text-(--text-main)">5. Security</h2>
+            <p>We implement industry-standard security practices, including:</p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Secure authentication mechanisms</li>
+              <li>Encrypted communication (HTTPS)</li>
+              <li>Access control for internal systems</li>
+            </ul>
+            <p>However, no system is 100% secure.</p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">6. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Update your profile information</li>
+              <li>Change your password</li>
+              <li>Control profile visibility (privacy settings)</li>
+              <li>Request deletion of your account and associated data</li>
+            </ul>
+            <p>Upon deletion, your data will be permanently removed within a reasonable timeframe.</p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">7. Children&apos;s Privacy</h2>
             <p>
-              We keep personal information only for as long as needed for the purposes
-              described in this policy, including while your account remains active, unless a
-              longer period is required by law.
+              Inazu is not intended for users under the age of 13 (or applicable minimum age in
+              your region). We do not knowingly collect data from children.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">7. Data Security</h2>
+            <h2 className="text-lg font-semibold text-(--text-main)">8. Third-Party Services</h2>
+            <p>We may use third-party services for:</p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Email delivery (OTP)</li>
+              <li>Cloud infrastructure</li>
+            </ul>
+            <p>These providers only access data necessary for their function.</p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-(--text-main)">9. Changes to This Policy</h2>
             <p>
-              We use reasonable technical and organizational safeguards to protect data.
-              However, no method of transmission or storage is completely secure, so absolute
-              security cannot be guaranteed.
+              We may update this Privacy Policy from time to time. Changes will be reflected with
+              an updated &quot;Effective Date.&quot;
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">8. Children&apos;s Privacy</h2>
+            <h2 className="text-lg font-semibold text-(--text-main)">10. Contact Us</h2>
+            <p>If you have questions, contact us at:</p>
             <p>
-              We do not knowingly collect data from children under 18. If we learn that
-              information from a minor has been collected, we will take reasonable steps to
-              delete it.
+              <a href="mailto:support@inazu.app" className="text-blue-400 hover:underline">
+                support@inazu.app
+              </a>
             </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">9. Your Privacy Rights</h2>
-            <p>
-              Depending on your location, you may have rights such as access, correction,
-              deletion, portability, restriction, objection, and withdrawal of consent.
-            </p>
-            <p>
-              To exercise your rights, contact us using the details below. We may need to
-              verify your identity before processing requests.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">10. US State Privacy Rights</h2>
-            <p>
-              If you are a resident of certain US states, you may have specific rights under
-              applicable state privacy laws, including rights to know, access, correct,
-              delete, and appeal certain decisions related to your personal data.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">11. Policy Updates</h2>
-            <p>
-              We may update this Privacy Policy from time to time. If material changes are
-              made, we will update the "Last updated" date and, where required, provide
-              additional notice.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-(--text-main)">12. Contact Us</h2>
-            <p>
-              If you have questions or concerns about this policy, contact us at
-              support@inazu.app.
-            </p>
-            <p>Organization: INAZU</p>
           </section>
         </div>
       </div>
