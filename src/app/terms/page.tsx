@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 export default async function TermsPage({ searchParams }: { searchParams: Promise<{ ref?: string }> }) {
   const { ref } = await searchParams;
   return (
-    <main className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 pt-15 sm:px-6 lg:px-8">
+    <main className={`mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 ${ref !== 'app' ? 'pt-15' : ''} sm:px-6 lg:px-8`}>
       {ref !== 'app' && <SiteHeader />}
       <div className="mx-auto mt-12 max-w-7xl">
         <SectionHeading
