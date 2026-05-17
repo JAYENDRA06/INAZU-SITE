@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SiteFooter } from "@/components/site-footer";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -28,7 +27,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${orbitron.variable} ${spaceGrotesk.variable}`}>
         {children}
-        <SiteFooter />
       </body>
     </html>
   );

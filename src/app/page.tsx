@@ -14,6 +14,7 @@ import { HeroScene } from "@/components/hero-scene";
 import { ScrollRoad } from "@/components/scroll-road";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const capabilities = [
   {
@@ -258,6 +259,8 @@ export default function Home() {
           </div>
         </AnimatedSection>
       </div>
+
+      <SiteFooter />
     </main>
   );
 }

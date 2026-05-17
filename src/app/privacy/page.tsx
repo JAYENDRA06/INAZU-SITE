@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export default async function PrivacyPage({ searchParams }: { searchParams: Promise<{ ref?: string }> }) {
   const { ref } = await searchParams;
@@ -151,6 +152,8 @@ export default async function PrivacyPage({ searchParams }: { searchParams: Prom
           </section>
         </div>
       </div>
+
+      {ref !== 'app' && <SiteFooter />}
     </main>
   );
 }
