@@ -6,4 +6,4 @@ out
 *.log
 *.lock
 .DS_Store
-.env
+.env*

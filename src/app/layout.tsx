@@ -1,21 +1,44 @@
-import type { Metadata } from "next";
-import { Orbitron, Space_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { DM_Sans, IBM_Plex_Mono, Syne } from "next/font/google";
+
+import { JsonLd } from "@/components/json-ld";
+import { rootMetadata } from "@/lib/seo";
+import { organizationJsonLd, webSiteJsonLd } from "@/lib/structured-data";
+import { siteUrl } from "@/lib/site-config";
+
 import "./globals.css";
 
-const orbitron = Orbitron({
+const syne = Syne({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["600", "700", "800"],
+  display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "INAZU | Your Ride Companion",
-  description:
-    "INAZU is a performance-focused ride tracking and analytics platform for car and bike enthusiasts built for precision, competition, and real-world speed intelligence.",
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+export const metadata: Metadata = rootMetadata;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f3f4f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c100b" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
@@ -25,7 +48,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${orbitron.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href={siteUrl} />
+      </head>
+      <body className={`${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable} antialiased`}>
+        <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
         {children}
       </body>
     </html>

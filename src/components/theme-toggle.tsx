@@ -43,7 +43,7 @@ export function ThemeToggle() {
       type="button"
       aria-label="Toggle theme"
       onClick={handleToggle}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--border-strong) bg-(--surface-soft) text-(--text-strong) transition hover:border-(--accent) hover:text-(--accent)"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-(--border-strong) bg-(--surface) text-(--text-strong) transition hover:border-(--accent) hover:text-(--accent)"
     >
       {mounted ? (
         theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />

@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import {
   BarChart3,
@@ -19,31 +20,31 @@ const liveFeatures = [
     key: "offline-tracking",
     icon: Signal,
     title: "Offline + background tracking",
-    description: "Keep ride tracking active even with weak network and while the app is in background.",
+    description: "Recording stays on with weak signal or in background.",
   },
   {
     key: "save-and-stats",
     icon: Save,
     title: "Saved ride recaps",
-    description: "Each saved ride generates clean session stats and ride summary details.",
+    description: "Path, stats, chart, and notes on every saved session.",
   },
   {
     key: "garage-stats",
     icon: BarChart3,
     title: "Garage-linked stats",
-    description: "Stats update for the selected vehicle in your garage and your overall profile.",
+    description: "Vehicle and profile totals update when you save.",
   },
   {
     key: "period-stats",
     icon: CalendarRange,
-    title: "Weekly/monthly insights",
-    description: "Quick progress snapshots help you track consistency over time.",
+    title: "Weekly & monthly insights",
+    description: "Progress snapshots across your riding history.",
   },
   {
     key: "friends",
     icon: UserPlus,
     title: "Friend requests",
-    description: "Connect with other riders and build your network inside INAZU.",
+    description: "Connect with other riders in INAZU.",
   },
 ];
 
@@ -52,13 +53,13 @@ const plannedFeatures = [
     key: "crew-groups",
     icon: Users,
     title: "Crew groups",
-    description: "Private circles for ride plans, goals, and local communities.",
+    description: "Private circles for plans, goals, and local crews.",
   },
   {
     key: "group-rides",
     icon: UsersRound,
     title: "Group rides",
-    description: "Organize and experience rides together with your crew.",
+    description: "Organize and ride together with your crew.",
   },
   {
     key: "lap-recording",
@@ -70,13 +71,13 @@ const plannedFeatures = [
     key: "go-karting",
     icon: Flag,
     title: "Go-karting recording",
-    description: "Capture kart sessions and compare performance with friends.",
+    description: "Kart sessions with performance comparisons.",
   },
   {
     key: "feed",
     icon: Newspaper,
     title: "User feed",
-    description: "Activity and milestone feed to keep the community engaged.",
+    description: "Activity and milestones from people you follow.",
   },
 ];
 
@@ -88,52 +89,60 @@ export function FeatureExplorer() {
   }, [activeTab]);
 
   return (
-    <div className="rounded-[1.8rem] border border-(--border-soft) bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_96%,transparent),color-mix(in_srgb,var(--surface-soft)_95%,transparent))] p-6">
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setActiveTab("live")}
-          className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] transition ${
-            activeTab === "live"
-              ? "border-(--accent) bg-[color-mix(in_srgb,var(--accent)_18%,transparent)] text-(--text-strong)"
-              : "border-(--border-strong) bg-(--surface-soft) text-(--text-muted) hover:text-(--text-strong)"
-          }`}
-        >
-          Live now
-        </button>
-        <button
-          type="button"
-          onClick={() => setActiveTab("next")}
-          className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] transition ${
-            activeTab === "next"
-              ? "border-(--accent) bg-[color-mix(in_srgb,var(--accent)_18%,transparent)] text-(--text-strong)"
-              : "border-(--border-strong) bg-(--surface-soft) text-(--text-muted) hover:text-(--text-strong)"
-          }`}
-        >
-          Coming next
-        </button>
-      </div>
+    <div className="overflow-hidden rounded-3xl border border-(--border-soft) bg-(--surface)">
+      <div className="border-b border-(--border-soft) px-5 py-5 sm:px-6">
+        <p className="label-xs">Roadmap</p>
+        <h3 className="mt-1 font-display text-xl font-bold text-(--text-strong) sm:text-2xl">
+          Available now & coming soon
+        </h3>
 
-      <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-        {items.map((item) => {
-          const Icon = item.icon;
-
-          return (
-            <article
-              key={item.key}
-              className="rounded-xl border border-(--border-soft) bg-[color-mix(in_srgb,var(--surface)_88%,transparent)] p-4 transition hover:border-(--accent)"
+        <div className="mt-4 grid grid-cols-2 gap-1 rounded-xl bg-(--surface-soft) p-1">
+          {(["live", "next"] as const).map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition ${
+                activeTab === tab
+                  ? "bg-(--accent) text-(--accent-ink) shadow-sm"
+                  : "text-(--text-muted) hover:text-(--text-strong)"
+              }`}
             >
-              <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-(--border-strong) bg-(--surface-soft)">
-                  <Icon className="h-4 w-4 text-(--accent)" />
-                </span>
-                <h3 className="font-display text-sm uppercase text-(--text-strong)">{item.title}</h3>
-              </div>
-              <p className="mt-3 text-xs leading-5 text-(--text-muted)">{item.description}</p>
-            </article>
-          );
-        })}
+              {tab === "live" ? "Live now" : "Coming next"}
+            </button>
+          ))}
+        </div>
       </div>
+
+      <AnimatePresence mode="wait">
+        <motion.ul
+          key={activeTab}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="grid gap-px bg-(--border-soft) sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {items.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <li
+                key={item.key}
+                className="flex items-start gap-3 bg-(--surface) px-4 py-3.5 sm:px-5 sm:py-4"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-(--surface-soft) text-(--accent)">
+                  <Icon className="h-4 w-4" />
+                </span>
+                <div className="min-w-0">
+                  <h4 className="text-sm font-semibold leading-snug text-(--text-strong)">{item.title}</h4>
+                  <p className="mt-0.5 text-xs leading-5 text-(--text-muted)">{item.description}</p>
+                </div>
+              </li>
+            );
+          })}
+        </motion.ul>
+      </AnimatePresence>
     </div>
   );
 }

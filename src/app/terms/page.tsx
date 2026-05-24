@@ -1,17 +1,57 @@
+import type { Metadata } from "next";
+
+import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { buildPageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/structured-data";
 
-export default async function TermsPage({ searchParams }: { searchParams: Promise<{ ref?: string }> }) {
+type TermsPageProps = {
+  searchParams: Promise<{ ref?: string }>;
+};
+
+export async function generateMetadata({ searchParams }: TermsPageProps): Promise<Metadata> {
   const { ref } = await searchParams;
+
+  return buildPageMetadata({
+    title: "Terms & Conditions",
+    description:
+      "Terms and conditions for using INAZU, the ride tracking app for bikes and cars, including accounts, acceptable use, and liability.",
+    path: "/terms",
+    noIndex: ref === "app",
+  });
+}
+
+export default async function TermsPage({ searchParams }: TermsPageProps) {
+  const { ref } = await searchParams;
+  const isEmbedded = ref === "app";
+
   return (
-    <main className={`mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 ${ref !== 'app' ? 'pt-15' : ''} sm:px-6 lg:px-8`}>
-      {ref !== 'app' && <SiteHeader />}
+    <main
+      className={`mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 ${!isEmbedded ? "pt-15" : ""} sm:px-6 lg:px-8`}
+      aria-label="INAZU Terms and Conditions"
+    >
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Terms & Conditions", path: "/terms" },
+          ]),
+          webPageJsonLd({
+            path: "/terms",
+            title: "Terms & Conditions — INAZU",
+            description: "The rules and guidelines for using the INAZU ride tracking application.",
+          }),
+        ]}
+      />
+      {!isEmbedded && <SiteHeader />}
       <div className="mx-auto mt-12 max-w-7xl">
         <SectionHeading
           eyebrow="Terms"
           title="Terms & Conditions"
           description="The rules and guidelines for using INAZU."
+          titleAs="h1"
         />
         <div className="mt-3 text-sm text-(--text-muted)">Last updated: April 27, 2026</div>
 
@@ -132,7 +172,7 @@ export default async function TermsPage({ searchParams }: { searchParams: Promis
         </div>
       </div>
 
-      {ref !== 'app' && <SiteFooter />}
+      {!isEmbedded && <SiteFooter />}
     </main>
   );
 }

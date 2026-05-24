@@ -1,17 +1,58 @@
+import type { Metadata } from "next";
+
+import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { buildPageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/structured-data";
 
-export default async function PrivacyPage({ searchParams }: { searchParams: Promise<{ ref?: string }> }) {
+type PrivacyPageProps = {
+  searchParams: Promise<{ ref?: string }>;
+};
+
+export async function generateMetadata({ searchParams }: PrivacyPageProps): Promise<Metadata> {
   const { ref } = await searchParams;
+
+  return buildPageMetadata({
+    title: "Privacy Policy",
+    description:
+      "INAZU Privacy Policy: how we collect, use, store, and protect your information when you use our ride tracking app for bikes and cars.",
+    path: "/privacy",
+    noIndex: ref === "app",
+  });
+}
+
+export default async function PrivacyPage({ searchParams }: PrivacyPageProps) {
+  const { ref } = await searchParams;
+  const isEmbedded = ref === "app";
+
   return (
-    <main className={`mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 ${ref !== 'app' ? 'pt-15' : ''} sm:px-6 lg:px-8`}>
-      {ref !== 'app' && <SiteHeader />}
+    <main
+      className={`mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-16 ${!isEmbedded ? "pt-15" : ""} sm:px-6 lg:px-8`}
+      aria-label="INAZU Privacy Policy"
+    >
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path: "/privacy" },
+          ]),
+          webPageJsonLd({
+            path: "/privacy",
+            title: "Privacy Policy — INAZU",
+            description:
+              "How INAZU collects, uses, discloses, and safeguards your information when you use the ride tracking app.",
+          }),
+        ]}
+      />
+      {!isEmbedded && <SiteHeader />}
       <div className="mx-auto mt-12 max-w-7xl">
         <SectionHeading
           eyebrow="Privacy"
           title="Privacy Policy"
           description="How INAZU collects, uses, discloses, and safeguards your information."
+          titleAs="h1"
         />
         <div className="mt-3 text-sm text-(--text-muted)">Last updated: April 27, 2026</div>
 
@@ -153,7 +194,7 @@ export default async function PrivacyPage({ searchParams }: { searchParams: Prom
         </div>
       </div>
 
-      {ref !== 'app' && <SiteFooter />}
+      {!isEmbedded && <SiteFooter />}
     </main>
   );
 }
