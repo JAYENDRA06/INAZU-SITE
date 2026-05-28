@@ -1,9 +1,13 @@
 import { ImageResponse } from "next/og";
 
+import { getLogoDataUrl } from "@/lib/og-logo";
+
 export const size = { width: 512, height: 512 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const logoSrc = await getLogoDataUrl();
+
   return new ImageResponse(
     (
       <div
@@ -14,26 +18,9 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#0c100b",
-          borderRadius: 112,
         }}
       >
-        <div
-          style={{
-            width: 280,
-            height: 280,
-            borderRadius: 64,
-            background: "#dfff4f",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#0c100b",
-            fontSize: 160,
-            fontWeight: 800,
-            fontFamily: "system-ui, sans-serif",
-          }}
-        >
-          Z
-        </div>
+        <img src={logoSrc} alt="" width={320} height={153} style={{ objectFit: "contain" }} />
       </div>
     ),
     { ...size },
