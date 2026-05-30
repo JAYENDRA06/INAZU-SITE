@@ -75,7 +75,7 @@ export default function Home() {
                 Request early access
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#product" className="btn-ghost">
+              <a href="#live-tracking" className="btn-ghost">
                 See it in action
               </a>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
           <SavedRideRecap />
         </div>
 
-        <AnimatedSection id="use-cases" className="mt-24" delay={0.05}>
+        <AnimatedSection id="use-cases" className="mt-24 scroll-mt-24" delay={0.05}>
           <SectionHeading
             eyebrow="How riders use INAZU"
             title="Memories, performance—or both"
@@ -108,7 +108,7 @@ export default function Home() {
           <ProgressShowcase />
         </AnimatedSection>
 
-        <AnimatedSection id="capabilities" className="mt-24" delay={0.1}>
+        <AnimatedSection id="capabilities" className="mt-24 scroll-mt-24" delay={0.1}>
           <SectionHeading
             eyebrow="Core features"
             title="Built for real rides"
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="roadmap" className="mt-24 grid gap-8" delay={0.15}>
+        <AnimatedSection id="roadmap" className="mt-24 grid scroll-mt-24 gap-8" delay={0.15}>
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
             <SectionHeading
               eyebrow="How it works"
@@ -145,7 +145,7 @@ export default function Home() {
           <FeatureExplorer />
         </AnimatedSection>
 
-        <AnimatedSection id="download" className="mt-24" delay={0.2}>
+        <AnimatedSection id="download" className="mt-24 scroll-mt-24" delay={0.2}>
           <div className="relative overflow-hidden rounded-3xl border border-(--border-soft) bg-(--surface) px-6 py-12 sm:px-10 sm:py-14">
             <div
               className="pointer-events-none absolute inset-0 opacity-60"

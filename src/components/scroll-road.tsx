@@ -42,7 +42,7 @@ export function ScrollRoad() {
   });
 
   return (
-    <section ref={containerRef} id="product" className="relative">
+    <section ref={containerRef} id="live-tracking" className="relative scroll-mt-24">
       <div className="surface-card overflow-hidden rounded-3xl p-6 sm:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-lg">

@@ -8,6 +8,7 @@ import {
   Flag,
   Newspaper,
   Save,
+  Share2,
   Signal,
   TimerReset,
   UserPlus,
@@ -49,6 +50,12 @@ const liveFeatures = [
 ];
 
 const plannedFeatures = [
+  {
+    key: "sharing",
+    icon: Share2,
+    title: "Sharing profiles and rides",
+    description: "Share your profile and rides with friends and family.",
+  },
   {
     key: "crew-groups",
     icon: Users,

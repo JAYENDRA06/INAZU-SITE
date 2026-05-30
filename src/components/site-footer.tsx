@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const footerLinks = [
-  { label: "Product", href: "/#product" },
   { label: "Features", href: "/#capabilities" },
   { label: "Roadmap", href: "/#roadmap" },
   { label: "Privacy", href: "/privacy" },

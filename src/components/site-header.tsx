@@ -7,10 +7,10 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
-  { href: "/#product", label: "Product" },
   { href: "/#capabilities", label: "Features" },
   { href: "/#roadmap", label: "Roadmap" },
   { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ];
 
 export function SiteHeader() {
