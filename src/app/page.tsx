@@ -17,11 +17,11 @@ import { buildPageMetadata } from "@/lib/seo";
 import { homePageJsonLdGraph } from "@/lib/structured-data";
 
 export const metadata = buildPageMetadata({
-  title: "INAZU — Ride Tracking App for Bikes & Cars",
+  title: "INAZU — Home for Bike & Car Enthusiasts",
   description:
-    "Track bike and car rides with INAZU. Offline and background GPS, saved session recaps with stats and charts, garage-linked vehicle data, and weekly progress. Join early access at inazu.app.",
+    "Built for bike and car enthusiasts. INAZU starts with ride tracking—offline GPS, saved recaps, garage stats, and weekly progress—with more on the way. Join early access at inazu.app.",
   path: "/",
-  ogImageAlt: "INAZU ride tracking app for bikes and cars",
+  ogImageAlt: "INAZU for bike and car enthusiasts",
 });
 
 const workflow = [
@@ -61,12 +61,12 @@ export default function Home() {
 
             <div className="space-y-5">
               <h1 className="max-w-xl font-display text-4xl font-bold leading-[1.05] text-(--text-strong) sm:text-5xl lg:text-[3.4rem]">
-                Your rides,
-                <span className="text-(--accent)"> tracked & remembered</span>
+                One home for
+                <span className="text-(--accent)"> bike & car enthusiasts</span>
               </h1>
               <p className="max-w-lg text-base leading-7 text-(--text-muted) sm:text-lg">
-                INAZU records sessions offline or in the background, saves clean recaps, syncs stats to your garage,
-                and surfaces weekly and monthly progress along the way.
+                INAZU starts with ride tracking—offline sessions, saved recaps, garage-linked stats, and weekly
+                progress. The first step toward one place for everything you do on two wheels or four.
               </p>
             </div>
 
@@ -160,8 +160,8 @@ export default function Home() {
                   Help shape INAZU before launch
                 </h2>
                 <p className="mt-4 text-base leading-7 text-(--text-muted)">
-                  We&apos;re onboarding riders who want reliable tracking and clear recaps. Reach out if that sounds
-                  like you.
+                  We&apos;re onboarding bike and car enthusiasts who want one home for their rides—starting with
+                  tracking and recaps today.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-3">

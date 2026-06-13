@@ -42,10 +42,10 @@ export default async function OpenGraphImage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.2, letterSpacing: -0.5 }}>
-              Ride tracking for bikes & cars
+              For bike & car enthusiasts
             </div>
             <div style={{ fontSize: 15, color: "#9ca99a", lineHeight: 1.35 }}>
-              Offline GPS · saved recaps · garage stats · weekly progress
+              Ride tracking first · recaps · garage stats · progress
             </div>
           </div>
 

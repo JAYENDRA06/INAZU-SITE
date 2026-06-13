@@ -4,12 +4,14 @@ export const siteUrl =
 
 export const siteName = "INAZU";
 
-export const siteTagline = "Your Ride Companion";
+export const siteTagline = "For bike & car enthusiasts";
 
 export const defaultDescription =
-  "INAZU is a ride tracking app for bikes and cars. Record sessions offline or in the background, save GPS recaps with stats and charts, sync garage-linked vehicle data, and follow weekly and monthly progress.";
+  "INAZU is built for bike and car enthusiasts—starting with ride tracking, saved recaps, garage stats, and progress. One place to grow from your first session onward.";
 
 export const contactEmail = "hello@inazu.app";
+
+export const supportEmail = "support@inazu.app";
 
 /** Set NO_INDEX=true on preview/staging deploys to block crawlers. */
 export const allowIndexing = process.env.NO_INDEX !== "true";
@@ -37,4 +39,5 @@ export const publicRoutes = [
   { path: "/", changeFrequency: "weekly" as const, priority: 1 },
   { path: "/privacy", changeFrequency: "monthly" as const, priority: 0.4 },
   { path: "/terms", changeFrequency: "monthly" as const, priority: 0.4 },
+  { path: "/support", changeFrequency: "monthly" as const, priority: 0.5 },
 ];

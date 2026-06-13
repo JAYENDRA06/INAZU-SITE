@@ -3,6 +3,7 @@ import Image from "next/image";
 const footerLinks = [
   { label: "Features", href: "/#capabilities" },
   { label: "Roadmap", href: "/#roadmap" },
+  { label: "Support", href: "/support" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
 ];
@@ -21,7 +22,7 @@ export function SiteFooter() {
           <div>
             <p className="font-display text-lg font-bold text-(--text-strong)">INAZU</p>
             <p className="mt-2 max-w-xs text-sm leading-6 text-(--text-muted)">
-              Ride tracking and recaps for bikes and cars—offline, in background, with garage-linked stats.
+              For bike and car enthusiasts—track rides, save recaps, and build momentum from one place.
             </p>
           </div>
         </div>

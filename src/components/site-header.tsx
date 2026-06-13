@@ -28,7 +28,7 @@ export function SiteHeader() {
           </span>
           <div className="hidden sm:block">
             <p className="font-display text-base font-bold text-(--text-strong)">INAZU</p>
-            <p className="text-xs text-(--text-muted)">Your ride companion</p>
+            <p className="text-xs text-(--text-muted)">For bike & car enthusiasts</p>
           </div>
         </Link>
 

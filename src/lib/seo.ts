@@ -98,7 +98,7 @@ export function buildPageMetadata({
 export const rootMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} — Ride Tracking App for Bikes & Cars`,
+    default: `${siteName} — Home for Bike & Car Enthusiasts`,
     template: titleTemplate,
   },
   description: defaultDescription,
@@ -134,7 +134,7 @@ export const rootMetadata: Metadata = {
     locale,
     url: siteUrl,
     siteName,
-    title: `${siteName} — Ride Tracking App for Bikes & Cars`,
+    title: `${siteName} — Home for Bike & Car Enthusiasts`,
     description: defaultDescription,
     images: [
       {
@@ -147,7 +147,7 @@ export const rootMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — Ride Tracking App for Bikes & Cars`,
+    title: `${siteName} — Home for Bike & Car Enthusiasts`,
     description: defaultDescription,
     images: ["/twitter-image"],
   },
