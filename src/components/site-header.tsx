@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { siteTagline } from "@/lib/site-config";
 
 const links = [
   { href: "/#capabilities", label: "Features" },
@@ -28,7 +29,7 @@ export function SiteHeader() {
           </span>
           <div className="hidden sm:block">
             <p className="font-display text-base font-bold text-(--text-strong)">INAZU</p>
-            <p className="text-xs text-(--text-muted)">For bike & car enthusiasts</p>
+            <p className="text-xs text-(--text-muted)">{siteTagline}</p>
           </div>
         </Link>
 

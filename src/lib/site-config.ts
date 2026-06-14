@@ -4,7 +4,7 @@ export const siteUrl =
 
 export const siteName = "INAZU";
 
-export const siteTagline = "For bike & car enthusiasts";
+export const siteTagline = "Your ride companion";
 
 export const defaultDescription =
   "INAZU is built for bike and car enthusiasts—starting with ride tracking, saved recaps, garage stats, and progress. One place to grow from your first session onward.";
