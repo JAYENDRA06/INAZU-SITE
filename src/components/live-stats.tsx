@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const highlights = [
-  { label: "Tracking", value: "Offline + background" },
+  { label: "Tracking", value: "Live GPS on map" },
   { label: "Recaps", value: "Per saved session" },
   { label: "Garage", value: "Vehicle-linked stats" },
   { label: "Progress", value: "Weekly & monthly" },

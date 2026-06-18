@@ -67,7 +67,7 @@ export default function SupportPage() {
               <li>Ride recording, GPS, and background tracking</li>
               <li>Saved rides, stats, and garage data</li>
               <li>Privacy, data deletion, and account removal</li>
-              <li>Early access and beta feedback</li>
+              <li>General feedback and feature requests</li>
             </ul>
           </section>
 

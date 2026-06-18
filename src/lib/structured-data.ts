@@ -1,4 +1,4 @@
-import { contactEmail, defaultDescription, siteName, siteTagline, siteUrl } from "@/lib/site-config";
+import { appStoreUrl, contactEmail, defaultDescription, siteName, siteTagline, siteUrl } from "@/lib/site-config";
 import { absoluteUrl } from "@/lib/seo";
 
 export function organizationJsonLd() {
@@ -50,14 +50,15 @@ export function softwareApplicationJsonLd() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      availability: "https://schema.org/PreOrder",
-      description: "Early access beta",
+      availability: "https://schema.org/InStock",
     },
+    downloadUrl: appStoreUrl,
+    installUrl: appStoreUrl,
     description: defaultDescription,
     url: siteUrl,
     image: `${siteUrl}/opengraph-image`,
     featureList: [
-      "Offline and background GPS ride tracking",
+      "GPS ride tracking with live stats and route on the map",
       "Saved ride recaps with path and session stats",
       "Garage-linked vehicle and profile statistics",
       "Weekly and monthly progress views",
@@ -110,7 +111,7 @@ export function homePageJsonLdGraph() {
     "@context": "https://schema.org",
     "@graph": [organizationJsonLd(), webSiteJsonLd(), softwareApplicationJsonLd(), webPageJsonLd({
       path: "/",
-      title: `${siteName} — Ride Tracking App for Bikes & Cars`,
+      title: `${siteName} — Home for Bike & Car Enthusiasts`,
       description: defaultDescription,
     })],
   };

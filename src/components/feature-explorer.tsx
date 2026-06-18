@@ -18,10 +18,10 @@ import {
 
 const liveFeatures = [
   {
-    key: "offline-tracking",
+    key: "gps-tracking",
     icon: Signal,
-    title: "Offline + background tracking",
-    description: "Recording stays on with weak signal or in background.",
+    title: "GPS ride tracking",
+    description: "Live stats and your route on the map. Background tracking during an active ride.",
   },
   {
     key: "save-and-stats",

@@ -14,12 +14,13 @@ import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { buildPageMetadata } from "@/lib/seo";
+import { appStoreUrl } from "@/lib/site-config";
 import { homePageJsonLdGraph } from "@/lib/structured-data";
 
 export const metadata = buildPageMetadata({
   title: "INAZU — Home for Bike & Car Enthusiasts",
   description:
-    "Built for bike and car enthusiasts. INAZU starts with ride tracking—offline GPS, saved recaps, garage stats, and weekly progress—with more on the way. Join early access at inazu.app.",
+    "Built for bike and car enthusiasts. Track rides with GPS, save recaps, manage your garage, and follow progress. Download INAZU free on the App Store.",
   path: "/",
   ogImageAlt: "INAZU for bike and car enthusiasts",
 });
@@ -28,7 +29,7 @@ const workflow = [
   {
     step: "01",
     title: "Start tracking",
-    description: "Begin a session with offline-ready GPS—recording continues in the background when needed.",
+    description: "Pick a vehicle from your garage and start from the Ride tab. GPS records your session—including in the background while your screen is off.",
   },
   {
     step: "02",
@@ -55,7 +56,7 @@ export default function Home() {
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-(--border-soft) bg-(--surface) px-3 py-1.5">
               <span className="h-2 w-2 rounded-full bg-(--accent)" />
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-(--text-muted)">
-                Bikes & cars · Early access
+                Now on the App Store · iPhone
               </span>
             </div>
 
@@ -65,18 +66,23 @@ export default function Home() {
                 <span className="text-(--accent)"> bike & car enthusiasts</span>
               </h1>
               <p className="max-w-lg text-base leading-7 text-(--text-muted) sm:text-lg">
-                INAZU starts with ride tracking—offline sessions, saved recaps, garage-linked stats, and weekly
-                progress. The first step toward one place for everything you do on two wheels or four.
+                Track every ride with GPS, live stats, and your garage in one place. Save recaps, follow weekly
+                progress, and connect with other riders—the first step toward one home for bikes and cars.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a href="#download" className="btn-primary">
-                Request early access
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Download on the App Store
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#live-tracking" className="btn-ghost">
-                See it in action
+              <a href="#capabilities" className="btn-ghost">
+                Explore features
               </a>
             </div>
 
@@ -112,7 +118,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Core features"
             title="Built for real rides"
-            description="Offline tracking, saved session recaps, garage-linked stats, and progress views that match how you actually use the app."
+            description="GPS ride tracking, saved session recaps, your garage, and progress views—built for how you actually ride."
           />
           <div className="mt-10">
             <CapabilityBento />
@@ -155,20 +161,25 @@ export default function Home() {
             />
             <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-xl">
-                <p className="label-xs">Early access</p>
+                <p className="label-xs">Download</p>
                 <h2 className="mt-3 font-display text-3xl font-bold text-(--text-strong) sm:text-4xl">
-                  Help shape INAZU before launch
+                  Get INAZU on iPhone
                 </h2>
                 <p className="mt-4 text-base leading-7 text-(--text-muted)">
-                  We&apos;re onboarding bike and car enthusiasts who want one home for their rides—starting with
-                  tracking and recaps today.
+                  Track rides, save recaps, and manage your garage—free on the App Store. Built for bike and car
+                  enthusiasts who want one home for their sessions.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-3">
-                <a href="mailto:hello@inazu.app" className="btn-primary min-w-52">
-                  hello@inazu.app
+                <a
+                  href={appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary min-w-52"
+                >
+                  Download on the App Store
                 </a>
-                <p className="text-center text-xs text-(--text-muted)">Beta · iOS focus · Bikes & cars</p>
+                <p className="text-center text-xs text-(--text-muted)">Free · iPhone · Requires iOS 15.1+</p>
               </div>
             </div>
           </div>

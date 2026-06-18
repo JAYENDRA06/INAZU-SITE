@@ -12,9 +12,9 @@ type Capability = {
 const capabilities: Capability[] = [
   {
     icon: Gauge,
-    title: "Offline + background tracking",
+    title: "GPS ride tracking",
     description:
-      "Keep recording when signal drops or when you switch apps—built for longer rides on bikes and in cars.",
+      "Live distance, speed, duration, and route on the map. Background tracking during an active ride when your screen is off.",
   },
   {
     icon: Activity,

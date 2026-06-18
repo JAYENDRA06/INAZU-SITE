@@ -1,10 +1,14 @@
 # INAZU (https://inazu.app)
 
-> Ride tracking app for bikes and cars.
+> Your ride companion for bikes and cars.
 
 ## About
 
-INAZU helps riders record GPS sessions offline or in the background, save ride recaps (path, stats, speed vs distance chart, notes), sync garage-linked vehicle statistics, and view weekly and monthly progress.
+INAZU helps riders record GPS sessions, save ride recaps, manage a garage of bikes and cars, and view weekly progress. Available on the App Store for iPhone.
+
+## Download
+
+- App Store: https://apps.apple.com/us/app/inazu/id6775971770
 
 ## Key pages
 

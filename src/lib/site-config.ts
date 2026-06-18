@@ -13,6 +13,8 @@ export const contactEmail = "hello@inazu.app";
 
 export const supportEmail = "support@inazu.app";
 
+export const appStoreUrl = "https://apps.apple.com/us/app/inazu/id6775971770";
+
 /** Set NO_INDEX=true on preview/staging deploys to block crawlers. */
 export const allowIndexing = process.env.NO_INDEX !== "true";
 
@@ -25,7 +27,7 @@ export const keywords = [
   "bike ride tracker",
   "car trip tracker",
   "GPS ride tracker",
-  "offline ride tracking",
+  "background GPS tracking",
   "background GPS tracking",
   "motorcycle ride tracker",
   "cycling tracker app",

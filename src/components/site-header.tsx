@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { siteTagline } from "@/lib/site-config";
+import { siteTagline, appStoreUrl } from "@/lib/site-config";
 
 const links = [
   { href: "/#capabilities", label: "Features" },
@@ -47,9 +47,14 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
-          <Link href="/#download" className="btn-primary px-4 py-2 text-sm">
-            Join beta
-          </Link>
+          <a
+            href={appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary px-4 py-2 text-sm"
+          >
+            Get the app
+          </a>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -78,9 +83,15 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/#download" onClick={() => setIsOpen(false)} className="btn-primary mt-2">
-              Join beta
-            </Link>
+            <a
+              href={appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary mt-2"
+            >
+              Get the app
+            </a>
           </div>
         </div>
       ) : null}

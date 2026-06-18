@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import { Clock, Route, Timer } from "lucide-react";
+import { Clock, MapPin, Timer } from "lucide-react";
 
 const pathD =
   "M -10 200 L 120 155 L 240 175 L 370 95 L 500 130 L 630 55 L 760 90 L 900 40";
@@ -22,7 +22,7 @@ export function ScrollRoad() {
   });
 
   const [marker, setMarker] = useState({ x: -10, y: 200 });
-  const [routeStats, setRouteStats] = useState({ progress: 0, distance: 0, speed: 0, duration: 0 });
+  const [routeStats, setRouteStats] = useState({ distance: 0, speed: 0, duration: 0 });
   const speedProgress = Math.min(routeStats.speed / 72, 1);
   const needleRotate = -120 + speedProgress * 240;
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
@@ -34,7 +34,6 @@ export function ScrollRoad() {
     const point = path.getPointAtLength(value * length);
     setMarker({ x: point.x, y: point.y });
     setRouteStats({
-      progress: value * 100,
       distance: 8 + value * 28,
       speed: 32 + value * 28,
       duration: 12 + value * 24,
@@ -48,11 +47,11 @@ export function ScrollRoad() {
           <div className="max-w-lg">
             <p className="label-xs">While you ride</p>
             <h3 className="mt-2 font-display text-2xl font-bold text-(--text-strong) sm:text-3xl">
-              Live route, updating as you move
+              Live stats and your route on the map
             </h3>
             <p className="mt-2 text-sm leading-7 text-(--text-muted)">
-              During an active session, INAZU follows your GPS path and surfaces distance, pace, and time in real time.
-              Scroll to see an example route draw in—like an active session on the map.
+              During an active ride, INAZU records your GPS path and shows distance, speed, duration, and your route on
+              the map. Background tracking keeps the session going when your screen is off.
             </p>
           </div>
 
@@ -79,15 +78,15 @@ export function ScrollRoad() {
                   </g>
                 </svg>
               </div>
-              <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-(--text-muted)">Live pace</p>
+              <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-(--text-muted)">Speed</p>
               <p className="font-display text-2xl font-bold text-(--text-strong)">{routeStats.speed.toFixed(0)} km/h</p>
             </div>
 
             <div className="flex flex-col justify-between gap-2">
               {[
-                { icon: Route, label: "Route drawn", value: `${routeStats.progress.toFixed(0)}%` },
-                { icon: Timer, label: "Distance", value: `${routeStats.distance.toFixed(1)} km` },
-                { icon: Clock, label: "Elapsed", value: `${routeStats.duration.toFixed(0)} min` },
+                { icon: MapPin, label: "Distance", value: `${routeStats.distance.toFixed(1)} km` },
+                { icon: Timer, label: "Duration", value: `${routeStats.duration.toFixed(0)} min` },
+                { icon: Clock, label: "Status", value: "Recording" },
               ].map((stat) => {
                 const Icon = stat.icon;
                 return (
@@ -108,7 +107,12 @@ export function ScrollRoad() {
         </div>
 
         <div className="mt-8 overflow-hidden rounded-2xl border border-(--border-soft) bg-(--surface-soft)">
-          <svg viewBox="-10 20 910 200" className="h-36 w-full sm:h-40" role="img" aria-label="Example of a live route being drawn">
+          <svg
+            viewBox="-10 20 910 200"
+            className="h-36 w-full sm:h-40"
+            role="img"
+            aria-label="Illustration of a GPS route on a map during an active ride"
+          >
             <defs>
               <linearGradient id="routeGlow" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.2" />
@@ -149,10 +153,6 @@ export function ScrollRoad() {
             </motion.g>
           </svg>
         </div>
-
-        <p className="mt-3 text-center font-mono text-[0.65rem] uppercase tracking-[0.1em] text-(--text-muted)">
-          Scroll to follow the example path
-        </p>
       </div>
     </section>
   );

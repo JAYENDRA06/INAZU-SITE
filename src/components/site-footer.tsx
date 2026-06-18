@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { appStoreUrl } from "@/lib/site-config";
+
 const footerLinks = [
   { label: "Features", href: "/#capabilities" },
   { label: "Roadmap", href: "/#roadmap" },
@@ -38,10 +40,12 @@ export function SiteFooter() {
             </a>
           ))}
           <a
-            href="/#download"
+            href={appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-semibold text-(--accent) transition hover:text-(--accent-strong)"
           >
-            Join beta
+            App Store
           </a>
         </nav>
       </div>
