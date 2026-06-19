@@ -57,6 +57,7 @@ export const publicRoutes = [
   { path: "/bike-ride-tracker", changeFrequency: "monthly" as const, priority: 0.85 },
   { path: "/ride-tracking", changeFrequency: "monthly" as const, priority: 0.85 },
   { path: "/vehicle-garage", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/delete-account", changeFrequency: "monthly" as const, priority: 0.5 },
   { path: "/support", changeFrequency: "monthly" as const, priority: 0.6 },
   { path: "/privacy", changeFrequency: "monthly" as const, priority: 0.4 },
   { path: "/terms", changeFrequency: "monthly" as const, priority: 0.4 },

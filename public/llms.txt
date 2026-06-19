@@ -15,6 +15,7 @@ INAZU helps riders record GPS sessions, save ride recaps, manage a garage of bik
 - Home: https://inazu.app/
 - FAQ: https://inazu.app/faq
 - Support: https://inazu.app/support
+- Delete account: https://inazu.app/delete-account
 - Privacy: https://inazu.app/privacy
 - Terms: https://inazu.app/terms
 

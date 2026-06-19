@@ -43,8 +43,8 @@ const quickHelp = [
   },
   {
     title: "Privacy and account deletion",
-    body: "Manage privacy settings, private profiles, and account deletion from Settings. See our Privacy Policy for full details.",
-    href: "/privacy",
+    body: "Manage privacy settings, private profiles, and account deletion from Settings—or use our account deletion page.",
+    href: "/delete-account",
   },
 ];
 

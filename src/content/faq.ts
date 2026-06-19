@@ -72,7 +72,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How do I delete my INAZU account?",
     answer:
-      "You can manage your account and request deletion from Settings in the app. See our Privacy Policy for details on data removal.",
+      "You can delete your account from Settings in the app, or request deletion at inazu.app/delete-account. See our Privacy Policy for details on data removal.",
   },
   {
     question: "What's coming next to INAZU?",
