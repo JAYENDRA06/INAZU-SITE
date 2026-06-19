@@ -9,7 +9,9 @@ import { siteTagline, appStoreUrl } from "@/lib/site-config";
 
 const links = [
   { href: "/#capabilities", label: "Features" },
+  { href: "/faq", label: "FAQ" },
   { href: "/#roadmap", label: "Roadmap" },
+  { href: "/support", label: "Support" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
 ];

@@ -19,6 +19,7 @@ export type PageSeoInput = {
   path: string;
   noIndex?: boolean;
   ogImageAlt?: string;
+  keywords?: string[];
 };
 
 export function absoluteUrl(path: string): string {
@@ -33,15 +34,19 @@ export function buildPageMetadata({
   path,
   noIndex = false,
   ogImageAlt,
+  keywords: pageKeywords,
 }: PageSeoInput): Metadata {
   const url = absoluteUrl(path);
   const indexable = allowIndexing && !noIndex;
   const ogTitle = path === "/" ? title : `${title} | ${siteName}`;
+  const mergedKeywords = pageKeywords
+    ? [...new Set([...pageKeywords, ...keywords])]
+    : [...keywords];
 
   return {
     title: path === "/" ? { absolute: title } : title,
     description,
-    keywords: [...keywords],
+    keywords: mergedKeywords,
     authors: [{ name: siteName, url: siteUrl }],
     creator: siteName,
     publisher: siteName,

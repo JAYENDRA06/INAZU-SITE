@@ -11,6 +11,7 @@ export function organizationJsonLd() {
     logo: `${siteUrl}/logo.svg`,
     description: defaultDescription,
     email: contactEmail,
+    sameAs: [appStoreUrl],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -102,6 +103,21 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function faqPageJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
     })),
   };
 }

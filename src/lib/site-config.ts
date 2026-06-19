@@ -20,26 +20,44 @@ export const allowIndexing = process.env.NO_INDEX !== "true";
 
 export const locale = "en_US";
 
+/** Global keywords — merged with page-specific keywords in buildPageMetadata. */
 export const keywords = [
   "INAZU",
   "inazu app",
+  "inazu ride tracker",
+  "inazu app store",
+  "inazu motorcycle",
+  "inazu garage",
   "ride tracking app",
+  "gps ride tracker",
   "bike ride tracker",
   "car trip tracker",
-  "GPS ride tracker",
-  "background GPS tracking",
-  "background GPS tracking",
   "motorcycle ride tracker",
+  "motorcycle ride tracker iphone",
+  "car trip tracker iphone",
+  "bike ride tracker iphone",
   "cycling tracker app",
   "ride recap app",
-  "garage stats tracker",
-  "weekly ride progress",
+  "vehicle garage app",
   "bike and car tracker",
+  "track rides iphone",
+  "gps ride tracker iphone free",
+  "background gps tracking active ride",
+  "weekly ride progress",
+  "garage stats tracker",
+  "follow riders app",
+  "your ride companion",
 ] as const;
 
 export const publicRoutes = [
   { path: "/", changeFrequency: "weekly" as const, priority: 1 },
+  { path: "/faq", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/motorcycle-ride-tracker", changeFrequency: "monthly" as const, priority: 0.85 },
+  { path: "/car-trip-tracker", changeFrequency: "monthly" as const, priority: 0.85 },
+  { path: "/bike-ride-tracker", changeFrequency: "monthly" as const, priority: 0.85 },
+  { path: "/ride-tracking", changeFrequency: "monthly" as const, priority: 0.85 },
+  { path: "/vehicle-garage", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/support", changeFrequency: "monthly" as const, priority: 0.6 },
   { path: "/privacy", changeFrequency: "monthly" as const, priority: 0.4 },
   { path: "/terms", changeFrequency: "monthly" as const, priority: 0.4 },
-  { path: "/support", changeFrequency: "monthly" as const, priority: 0.5 },
-];
+] as const;

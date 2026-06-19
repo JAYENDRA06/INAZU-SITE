@@ -13,9 +13,18 @@ INAZU helps riders record GPS sessions, save ride recaps, manage a garage of bik
 ## Key pages
 
 - Home: https://inazu.app/
+- FAQ: https://inazu.app/faq
+- Support: https://inazu.app/support
 - Privacy: https://inazu.app/privacy
 - Terms: https://inazu.app/terms
-- Support: https://inazu.app/support
+
+## Guides (SEO landing pages)
+
+- GPS ride tracking: https://inazu.app/ride-tracking
+- Motorcycle ride tracker: https://inazu.app/motorcycle-ride-tracker
+- Car trip tracker: https://inazu.app/car-trip-tracker
+- Bike ride tracker: https://inazu.app/bike-ride-tracker
+- Vehicle garage: https://inazu.app/vehicle-garage
 
 ## Contact
 
