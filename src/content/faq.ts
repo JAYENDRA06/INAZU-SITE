@@ -77,7 +77,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What's coming next to INAZU?",
     answer:
-      "INAZU is stage one of a broader platform. Planned additions include sharing profiles and rides, crew groups, group rides, lap recording, go-karting sessions, and a user feed. Ride tracking, recaps, garage, and progress are available today.",
+      "INAZU is stage one of a broader platform. Profile sharing is available today. Coming next: ride sharing, crew groups, group rides, lap recording, go-karting sessions, and a user feed. Ride tracking, recaps, garage, and progress are live now.",
   },
   {
     question: "How do I contact INAZU support?",

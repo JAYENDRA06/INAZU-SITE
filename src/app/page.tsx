@@ -67,7 +67,7 @@ export default function Home() {
               </h1>
               <p className="max-w-lg text-base leading-7 text-(--text-muted) sm:text-lg">
                 Track every ride with GPS, live stats, and your garage in one place. Save recaps, follow weekly
-                progress, and connect with other riders—the first step toward one home for bikes and cars.
+                progress, share your profile, and connect with other riders—the first step toward one home for bikes and cars.
               </p>
             </div>
 

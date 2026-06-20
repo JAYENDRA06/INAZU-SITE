@@ -47,14 +47,20 @@ const liveFeatures = [
     title: "Friend requests",
     description: "Connect with other riders in INAZU.",
   },
+  {
+    key: "profile-sharing",
+    icon: Share2,
+    title: "Profile sharing",
+    description: "Share your profile link from the app—friends open it in INAZU or on inazu.app.",
+  },
 ];
 
 const plannedFeatures = [
   {
-    key: "sharing",
+    key: "ride-sharing",
     icon: Share2,
-    title: "Sharing profiles and rides",
-    description: "Share your profile and rides with friends and family.",
+    title: "Ride sharing",
+    description: "Share saved ride recaps with friends and family.",
   },
   {
     key: "crew-groups",

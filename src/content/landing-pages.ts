@@ -206,7 +206,7 @@ export const landingPages: Record<string, LandingPage> = {
       },
       {
         title: "Built for enthusiasts",
-        body: "INAZU treats your garage as part of your identity as a rider or driver—not an afterthought. More social and sharing features for profiles and rides are coming next.",
+        body: "INAZU treats your garage as part of your identity as a rider or driver—not an afterthought. Share your profile from the app today; ride sharing is on the roadmap next.",
       },
     ],
     relatedSlugs: ["ride-tracking", "motorcycle-ride-tracker", "car-trip-tracker"],
