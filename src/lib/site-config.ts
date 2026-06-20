@@ -1,6 +1,6 @@
 /** Production site URL — set NEXT_PUBLIC_SITE_URL in deploy env if different. */
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://inazu.app";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.inazu.app";
 
 export const siteName = "INAZU";
 

@@ -23,8 +23,18 @@ export function formatProfileLocation(profile: PublicProfilePreview): string | n
   return parts.length > 0 ? parts.join(", ") : null;
 }
 
+export function normalizeProfileHandle(username: string): string | null {
+  try {
+    const decoded = decodeURIComponent(username).trim();
+    return decoded.length > 0 ? decoded : null;
+  } catch {
+    const trimmed = username.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  }
+}
+
 export async function fetchPublicProfile(username: string): Promise<PublicProfilePreview | null> {
-  const handle = username.trim();
+  const handle = normalizeProfileHandle(username);
   if (!handle) return null;
 
   try {

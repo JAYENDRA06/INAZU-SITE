@@ -4,12 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ProfileAppHandoff } from "@/components/profile-app-handoff";
+import { ProfileLinkFallback } from "@/components/profile-link-fallback";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { buildProfileWebUrl } from "@/lib/profile-links";
 import {
   fetchPublicProfile,
   formatProfileLocation,
+  normalizeProfileHandle,
   type PublicProfilePreview,
 } from "@/lib/profile-public-api";
 import { buildPageMetadata } from "@/lib/seo";
@@ -37,14 +39,23 @@ function profileDescription(profile: PublicProfilePreview): string {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { username } = await params;
-  const profile = await fetchPublicProfile(username);
+  const handle = normalizeProfileHandle(username);
+  if (!handle) {
+    return buildPageMetadata({
+      title: "Profile not found",
+      description: "This INAZU profile link is invalid.",
+      path: "/u",
+      noIndex: true,
+    });
+  }
+
+  const profile = await fetchPublicProfile(handle);
 
   if (!profile) {
     return buildPageMetadata({
-      title: "Profile not found",
-      description: "This INAZU profile could not be found.",
-      path: `/u/${username}`,
-      noIndex: true,
+      title: `@${handle}`,
+      description: `View @${handle} on ${siteName}. Open in the app for rides, stats, and more.`,
+      path: `/u/${handle}`,
     });
   }
 
@@ -58,10 +69,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProfileLinkPage({ params }: PageProps) {
   const { username } = await params;
-  const profile = await fetchPublicProfile(username);
+  const handle = normalizeProfileHandle(username);
+
+  if (!handle) {
+    notFound();
+  }
+
+  const profile = await fetchPublicProfile(handle);
 
   if (!profile) {
-    notFound();
+    return (
+      <>
+        <ProfileAppHandoff username={handle} />
+        <ProfileLinkFallback username={handle} />
+      </>
+    );
   }
 
   const location = formatProfileLocation(profile);
