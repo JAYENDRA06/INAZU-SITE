@@ -93,7 +93,7 @@ export default async function ProfileLinkPage({ params }: PageProps) {
     <>
       <ProfileAppHandoff username={profile.username} />
       <SiteHeader />
-      <main className="mx-auto flex min-h-[70vh] w-full max-w-3xl flex-col items-center px-6 py-16 text-center">
+      <main className="mx-auto flex min-h-[70vh] w-full max-w-3xl flex-col items-center px-6 pb-16 pt-24 text-center sm:pt-28">
         <div className="mb-6 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-[color:var(--border)] bg-[color:var(--surface-2)]">
           {profile.profile_photo ? (
             <Image
