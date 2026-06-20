@@ -15,6 +15,15 @@ export const supportEmail = "support@inazu.app";
 
 export const appStoreUrl = "https://apps.apple.com/us/app/inazu/id6775971770";
 
+/** Update when the Play Store listing is live. */
+export const playStoreUrl =
+  process.env.NEXT_PUBLIC_PLAY_STORE_URL ??
+  "https://play.google.com/store/apps/details?id=com.jayendra.inazu";
+
+export const authApiUrl =
+  process.env.NEXT_PUBLIC_AUTH_API_URL?.replace(/\/$/, "") ??
+  "https://authservice.inazu.app";
+
 /** Set NO_INDEX=true on preview/staging deploys to block crawlers. */
 export const allowIndexing = process.env.NO_INDEX !== "true";
 
