@@ -70,6 +70,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ),
     path: `/a/${id}`,
     keywords: ["inazu activity", "ride recap", activity.activityType],
+    ogImage: activity.polylineImageDark ?? undefined,
+    ogImageAlt: `${activity.activityTitle} route on ${siteName}`,
   });
 }
 

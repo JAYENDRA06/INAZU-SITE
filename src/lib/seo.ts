@@ -19,6 +19,7 @@ export type PageSeoInput = {
   path: string;
   noIndex?: boolean;
   ogImageAlt?: string;
+  ogImage?: string;
   keywords?: string[];
 };
 
@@ -34,6 +35,7 @@ export function buildPageMetadata({
   path,
   noIndex = false,
   ogImageAlt,
+  ogImage,
   keywords: pageKeywords,
 }: PageSeoInput): Metadata {
   const url = absoluteUrl(path);
@@ -42,6 +44,23 @@ export function buildPageMetadata({
   const mergedKeywords = pageKeywords
     ? [...new Set([...pageKeywords, ...keywords])]
     : [...keywords];
+  const socialImages = ogImage
+    ? [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogImageAlt ?? ogTitle,
+        },
+      ]
+    : [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: ogImageAlt ?? `${siteName} — ${siteTagline}`,
+        },
+      ];
 
   return {
     title: path === "/" ? { absolute: title } : title,
@@ -79,20 +98,13 @@ export function buildPageMetadata({
       siteName,
       title: ogTitle,
       description,
-      images: [
-        {
-          url: "/opengraph-image",
-          width: 1200,
-          height: 630,
-          alt: ogImageAlt ?? `${siteName} — ${siteTagline}`,
-        },
-      ],
+      images: socialImages,
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
-      images: ["/twitter-image"],
+      images: ogImage ? [ogImage] : ["/twitter-image"],
     },
     other: {
       "contact:email": contactEmail,
