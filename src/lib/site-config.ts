@@ -24,6 +24,10 @@ export const authApiUrl =
   process.env.NEXT_PUBLIC_AUTH_API_URL?.replace(/\/$/, "") ??
   "https://authservice.inazu.app";
 
+export const rideApiUrl =
+  process.env.NEXT_PUBLIC_RIDE_API_URL?.replace(/\/$/, "") ??
+  "https://rideservice.inazu.app";
+
 /** Set NO_INDEX=true on preview/staging deploys to block crawlers. */
 export const allowIndexing = process.env.NO_INDEX !== "true";
 

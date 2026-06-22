@@ -41,6 +41,7 @@ export async function fetchPublicProfile(username: string): Promise<PublicProfil
     const res = await fetch(`${authApiUrl}/public/profile/${encodeURIComponent(handle)}`, {
       next: { revalidate: 300 },
     });
+    if (res.status === 404 || res.status === 400) return null;
     if (!res.ok) return null;
     const json = (await res.json()) as PublicProfileResponse;
     return json.data ?? null;
